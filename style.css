@@ -1,0 +1,221 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFE5EC; 
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* --- စာမျက်နှာ အကူးအပြောင်း Effect များ --- */
+        .page {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: scale(0.9);
+            pointer-events: none;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* --- PAGE 1: ပထမစာမျက်နှာ Style များ --- */
+        #page1 header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem; 
+            color: #FB6F92;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: textFadeIn 1.8s ease-out forwards;
+        }
+
+        #page1 header p {
+            font-size: 1.1rem;
+            color: #FF8FAB;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 5px;
+            margin-bottom: 40px;
+            animation: textFadeIn 2.2s ease-out forwards;
+        }
+
+        .flower-container {
+            max-width: 300px;
+            width: 100%;
+            cursor: pointer;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .flower-image {
+            width: 100%;
+            height: auto;
+            animation: float 4s ease-in-out infinite;
+        }
+        .lee{
+            font-family: 'Dancing Script', cursive;
+            font-size: 0.95rem;
+            color: #6c757d;
+            line-height: 1.7;
+            padding: 0 10px;
+        }
+
+        /* --- PAGE 2: Valentine Day စာမျက်နှာ Style များ --- */
+        #page2 {
+            max-width: 500px; /* ဖုန်းနဲ့ပိုကိုက်အောင် ဆိုဒ်နည်းနည်းချုံ့ထားပါတယ် */
+            margin: 0 auto;
+            padding-top: 20px;
+            padding-bottom: 50px;
+            opacity: 0;
+            animation: textFadeIn 1.5s ease-out forwards;
+        }
+
+        #page2 h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.8rem;
+            color: #FF477E;
+            margin-bottom: 25px;
+        }
+
+        .second-flower {
+            max-width: 160px;
+            width: 100%;
+            height: auto;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* ✨ အသစ်ထည့်ထားသော မျဉ်းကြောင်း (Section Divider) Style ✨ */
+        .section-divider {
+            width: 60%; /* မျဉ်းကြောင်းအရှည် */
+            height: 2px; /* မျဉ်းကြောင်းအထူ */
+            background: linear-gradient(to right, transparent, #FF7096, transparent); /* ဘေးနှစ်ဖက်မှိန်ပြီး အလယ်လင်းမယ့် အရောင် */
+            margin: 35px 0; /* အထက်အောက် အကွာအဝေး */
+            border: none;
+        }
+
+        /* Countdown */
+        .countdown-container {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(255, 71, 126, 0.12);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #FF477E;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+        #page2 p.paragraph {
+            font-family: 'Dancing Script', cursive;
+            font-size: 0.95rem;
+            color: #6c757d;
+            line-height: 1.7;
+            padding: 0 10px;
+        }
+
+        /* YouTube Video */
+        .video-container {
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 1:1 ပုံလေး ၄ ပုံပြသရန် Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+        }
+
+        .grid-item {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            border: 4px solid white;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+       .back-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+            height: 55px;
+            background-color: white;
+            color: #FF477E;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(255, 71, 126, 0.2);
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            user-select: none;
+        }
+
+        .back-button:hover {
+            background-color: #FF477E;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 71, 126, 0.4);
+        }
+
+        /* --- 📱 Mobile screen သီးသန့် --- */
+        @media (max-width: 480px) {
+            #page1 header h1 { font-size: 2.5rem; }
+            .flower-container { max-width: 200px; }
+            
+            #page2 h1 { font-size: 2.8rem; }
+            .countdown-container { font-size: 1.1rem; padding: 12px; }
+            .image-grid { gap: 10px; }
+            .section-divider { margin: 25px 0; width: 80%; } /* ဖုန်းပေါ်မှာ မျဉ်းကြောင်းကို နည်းနည်း ပိုရှည်ပေးခြင်း */
+        }
+
+        /* --- Keyframes Animations --- */
+        @keyframes textFadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
